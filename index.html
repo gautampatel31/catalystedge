@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Edge - Freelance Agency</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <div class="logo">CATALYST EDGE</div>
+            <nav class="menu">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="team.html">Team</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <input type="search" class="search-bar" placeholder="Search...">
+        </div>
+        <div class="im">
+            <div class="image-slider">
+                <div class="slide fade">
+                    <img src="OIP (1).jpeg" alt="Service 1">
+                </div>
+                <div class="slide fade">
+                    <img src="digital-marketing.png" alt="Service 2">
+                </div>
+                <div class="slide fade">
+                    <img src="OIP.jpeg" alt="Service 3">
+                </div>
+                <div class="slide fade">
+                    <img src="OIP (2).jpeg" alt="Service 4">
+                </div>
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+        <div class="hero">
+            <h1>Transform Your Business with Expert Solutions</h1>
+            <p>Full-service freelance agency delivering digital marketing, design, development, and business optimization</p>
+            <a href="contact.html"><button class="cta-button">Get Started</button></a>
+        </div>
+    </header>
+
+    <main>
+        <section id="featured-services" class="featured-services">
+            <h2>Our Featured Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Digital Marketing</h3>
+                    <p>Boost your online presence with our comprehensive digital marketing strategies.</p>
+                    <a href="digital-marketing.html" class="learn-more">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <h3>Graphic Design</h3>
+                    <p>Create stunning visual identities and marketing materials that capture attention.</p>
+                    <a href="graphic-designing.html" class="learn-more">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>Build powerful websites and applications that drive business growth.</p>
+                    <a href="website-development.html" class="learn-more">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <h3>Video Production</h3>
+                    <p>Craft compelling video content that tells your story and engages your audience.</p>
+                    <a href="video-editing.html" class="learn-more">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <h3>Virtual Assistance</h3>
+                    <p>Free up your time with professional support services that keep your business running smoothly.</p>
+                    <a href="virtual-assistance.html" class="learn-more">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>Catalyst Edge © 2023</div>
+        <div>Privacy Policy | Terms of Service</div>
+        <div>Social Media Links</div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
