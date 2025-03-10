@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -91,4 +91,110 @@
 
     <script src="main.js"></script>
 </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Edge - Freelance Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #9fd3fc, #f2f2f2);
+            color: #333;
+        }
+        canvas { display: block; position: fixed; top: 0; left: 0; z-index: -1; background: transparent; }
+    </style>
+</head>
+<body>
+    <canvas id="bgCanvas"></canvas>
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold text-blue-600">CATALYST EDGE</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="services.html" class="hover:text-blue-600">Services</a>
+                <a href="team.html" class="hover:text-blue-600">Team</a>
+                <a href="blog.html" class="hover:text-blue-600">Blog</a>
+                <a href="about.html" class="hover:text-blue-600">About Us</a>
+                <a href="contact.html" class="hover:text-blue-600">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="relative mt-16 h-[500px] flex justify-center items-center">
+        <select class="bg-white text-blue-600 p-4 rounded-md shadow-md text-lg">
+            <option>Select an option</option>
+            <option value="digital-marketing">Digital Marketing</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="web-development">Web Development</option>
+            <option value="video-production">Video Production</option>
+            <option value="virtual-assistance">Virtual Assistance</option>
+        </select>
+    </section>
+    
+    <main class="container mx-auto mt-10 px-4">
+        <section id="featured-services">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-600">Our Featured Services</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-600">Digital Marketing</h3>
+                    <p class="mt-2 text-gray-700">Boost your online presence with strategic digital marketing.</p>
+                </div>
+                <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-600">Graphic Design</h3>
+                    <p class="mt-2 text-gray-700">Create stunning visual identities and marketing materials.</p>
+                </div>
+                <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-600">Web Development</h3>
+                    <p class="mt-2 text-gray-700">Build powerful websites and applications.</p>
+                </div>
+                <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-600">Video Production</h3>
+                    <p class="mt-2 text-gray-700">Craft compelling video content for your audience.</p>
+                </div>
+                <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl transition transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-blue-600">Virtual Assistance</h3>
+                    <p class="mt-2 text-gray-700">Professional support services to keep your business running smoothly.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white text-gray-700 mt-16 py-6 text-center">
+        <p>Catalyst Edge © 2025 | Privacy Policy | Terms of Service</p>
+    </footer>
+
+    <script>
+        // Three.js 3D Background Animation
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        const geometry = new THREE.SphereGeometry(5, 32, 32);
+        const material = new THREE.MeshStandardMaterial({ color: 0x1e90ff, wireframe: true });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+        
+        const light = new THREE.PointLight(0xffffff, 1);
+        light.position.set(20, 20, 20);
+        scene.add(light);
+        
+        camera.position.z = 20;
+        
+        function animate() {
+            requestAnimationFrame(animate);
+            sphere.rotation.x += 0.01;
+            sphere.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
 </html>
+
